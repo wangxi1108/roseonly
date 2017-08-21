@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" href="../css/zhuce.css">
+</head>
+<body>
+	<!-- 引入头部 -->
+	<div id="top"></div> 
+
+	<!-- 用SASS写css -->
+	<div id="loginbox"> 
+	
+		<div class="login">
+			<a class="zuoa" href="#"></a>
+			<div class="denglu">
+				<div class="xinxi">
+				<!-- 国家 -->
+					<select name="" class="country" >
+						<option value="">中国</option>
+						<option value="">新加坡</option>
+						<option value="">澳大利亚</option>
+						<option value="">外星</option>
+						<option value="">欧洲</option>
+					 
+					</select>
+				
+					<div class="callbox">
+						<p>+86</p>
+						<input class="call" type="text" 
+						placeholder="请输入手机号">
+						<span class="tishi1"></span>
+					</div>
+					<!-- 验证码 -->
+					<div class="yzmbox">
+						<input class="yan1" id="captcha" type="text" placeholder="图片验证">
+						<!-- <img class="api" src="" alt=""> -->
+						<b class="api" id="captchaimg" title="换一张"></b>
+						<br>
+						<!-- <i class="huan">换一张</i> -->
+						<span class="tishi3"></span>
+					</div>
+					
+					<div class="yzmbox">
+						<input class="ma" type="text" placeholder="短信验证码s">
+						<b class="fa">发送验证码</b>
+
+					</div>
+			
+					<input class="password" type="password" 
+					placeholder="密码为：6到16位数字或字母">
+					<span class="tishi2"></span>
+					<p class="chuang">创建账号</p>
+					<b class="yanzheng"">创建账号</b>
+
+ <!-- href="javascript:void(0); -->
+				</div>
+			<img src="../images/login/yunshu.png" alt="">
+			</div>
+		</div>
+
+	</div>
+
+	<div id="baoyou">
+		<img src="../images/login/baoyou.PNG" alt="">
+	</div>
+<!-- 引入尾部 -->
+<div id="weibu"></div>
+
+
+	
+<script type="text/javascript" src="../lib/jquery/jquery.js"></script>
+<script src="../lib/jquery_plugins/jquery.cookie.js"></script>
+<script src="../lib/jquery_plugins/gVerify.js"></script>
+
+<script src="../js/zhuce.js"></script>
+
+
+
+<script>
+	
+
+	/*手机号*/
+	var $haoma;
+
+	$(".call").blur(function(){
+		$(".tishi1").html(" ");
+			$haoma= $(".call").val();
+		/*var  $reg= /^[0-9]{11}$/;*/
+		var $reg= /^1[3|4|5|8][0-9]\d{8}$/;
+
+		if ($reg.test($haoma)) {
+			
+			$(".tishi1").html(" ");
+			
+			}else{
+				$(".tishi1").html("格式不对!");
+			}
+			// console.log($haoma);
+			
+	}); 
+
+
+/*验证码*/
+	$(".yan1").val(" ");
+/*
+	$.getJSON("http://route.showapi.com/26-4?showapi_appid=38771&showapi_sign=29907f4c9b284d2fab3dce39f217e1bf&textproducer_char_length=6&textproducer_char_string=abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",function(data){
+			console.log(data);
+
+			// $(".api").attr("src","data.showapi_res_body.img_path");
+			//此路径是img标签自带的src,路径为接口提供的图片路径一致。
+			var _text= data.showapi_res_body.text;
+
+			$(".api").text(_text);
+			$(".tishi3").text(" ");
+
+		
+			$(".yan1").blur(function(){
+					var _yan1= $(this).val();
+				if(_yan1== _text){
+					$(".tishi3").text("输入正确");
+				}else{
+					$(".tishi3").text("输入错误");
+				}
+
+			});
+
+
+		});
+
+
+/*验证码*/
+	
+	var verifyCode = new GVerify("captchaimg");
+		document.getElementById("captcha").onblur = function(){
+			var res = verifyCode.validate(document.getElementById("captcha").value);//得到的为false/true;
+
+			if(res){
+				$(".tishi3:eq(0)").html("正确");
+			}else{
+				$(".tishi3:eq(0)").html("错误");
+			}
+			
+		};
+
+	// var _name= $(".call").val();
+	var $mima;
+$(".password").blur(function(){
+
+		 $mima= $(".password").val();
+		var $reg= /^[0-9A-Za-z]{6,16}$/;
+
+		if($reg.test($mima)){
+			$(".tishi2").html(" ");
+
+		}else{
+			$(".tishi2").html("密码格式不正确");
+		}
+		
+		});                                                                                                                                                                                     
+$(".yanzheng").click(function(){
+			var message= {
+				username: $haoma,
+				password: $mima
+			}
+			
+			$.cookie.json= true;
+	
+	var _mes= $.cookie("mes");
+
+		/*if(_mes.length== 0){
+			_mes= [];
+		}else{
+			_mes.push(message);	
+		}*/
+		
+
+		$.cookie("mes",message,{expires:9});
+		// console.log($.cookie("mes"));
+
+		location="login.html";
+	});
+
+
+		
+</script>
+
+</body>
+</html>
+
+
+

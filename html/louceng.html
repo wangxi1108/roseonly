@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>楼层导航</title>
+	<style>
+		
+	html, body,li,a,img,ul,li,p{margin: 0;padding: 0;}
+	a{text-decoration: none;}
+	li{list-style: none;}
+	img{border: 0;}
+
+
+
+	#menu{width: 60px;position: fixed;left: 0;top: 300px;display: ;}
+	#menu li{width: 60px;height: 50px;border: 1px solid;
+		background: #ccc;}
+	</style>
+</head>
+<body>
+	
+	<ul id="menu">
+		<li>1L吃</li>
+		<li>2L喝</li>
+		<li>3L啦</li>
+		<li>4L啥</li>
+		<li>5L睡</li>
+		<li>6L耍</li>
+		<li>回到顶部</li>
+	</ul>
+
+	<script src="../lib/jquery/jquery.js"></script>
+	<script>
+
+	$(function(){
+/*楼层是楼层！！1不要一心往列表导航去想！
+	高度高度都是楼层的，对象是 楼层！而不是li，OK????
+*/
+
+		//第一个楼层以上的高度
+		var headerH= $(".floor:eq(0)").offset().top,
+
+			//可视窗口高度
+			winHeight= $(window).height(),
+			// 标记是否是由于点击导航发生的滚动行为，true:点击触发  false:非点击
+			isClickmove= false,
+
+			currentFloorIndex= 0;// 当前显示楼层的索引
+
+		// 绑定页面滚动事件
+		$(window).on("scroll",function(){
+			if(!isClickmove){
+			var _scrollTop= $(window).scrollTop();
+			//当滚动距离大于窗口一半时：
+			if(_scrollTop>= headerH-winHeight/2){
+
+				$("#menu").stop().fadeIn();
+			}else{
+				$("#menu").stop().fadeOut();
+			}
+
+			//遍历每个楼层
+			$(".floor").each(function(index,element){
+			//求当前遍历到楼层在文档中距离文档顶部的绝对定位
+			var _top= $(element).offset().top;
+			// 与滚动距离判断
+			if(_scrollTop>= _top-winHeight/2){
+			//把相应导航列表里面的字显示出来
+			// $("#menu li").eq(index).children("span").show().end().siblings().children("span").hide();
+
+				$("#menu li").eq(index).css({background:"red"}).siblings().css({background:"#ccc"});
+ 
+				// 标记当前正显示楼层的索引
+				currentFloorIndex= index;
+			}
+
+			});
+
+		}
+		});
+
+		
+		// 点击导航楼层跳转
+		$("#menu li:not(:last)").click(function(){
+
+			//定义列表导航的索引
+			var floorIndex= $(this).index(),
+
+		 //计算页面应该滚动的高度,等于要显示的楼层在文档的位置高度
+		 _top= $(".floor").eq(floorIndex).offset().top;
+
+		 isClickmove= true;
+
+		 // $(this).children("span").show().end()
+		 // 		.siblings().children("span").hide();
+		
+		$(this).css({background:"red"}).siblings().css({background:"#ccc"});		
+
+		 //2、 实现页面滚动效果:设置页面的滚动高度,对象是页面！
+		 $("body,html").stop().animate({scrollTop: _top},300,function(){
+		 		isClickmove= false;//点击事件运动 完成之后，就把标记记上。
+
+		 	});
+		 //鼠标移入移出li列表导航时，li背景的显示
+		
+		}).hover(function(){//鼠标滑过li时的效果。不是点击事件的
+			// $(this).children("span").show();
+			
+			$(this).css({background:"red"});
+		},function(){
+		//排除当当前正在显示的楼层与点击的楼层相同时,不取消背景
+			if($(this).index() !== currentFloorIndex){
+				// $(this).children("span").hide();
+				
+				$(this).css({background:"#ccc"});
+			}
+		});
+
+		//点击 回到顶部时，回到顶部
+		$("#menu li:last").click(function(){
+			$(window).scrollTop(0);
+		// $("html,body").animate({scrollTop:0},1000);
+		});
+
+	});
+
+	</script>
+
+</body>
+</html>

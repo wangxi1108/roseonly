@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品列表页</title>
+	<link rel="stylesheet" href="../css/liebiao.css">
+</head>
+<body> 
+	<!-- 引入头部 -->
+	<div id="top"></div>
+ 
+	<div id="daliebox">
+		<div class="bj"></div>
+
+		<div class="selectbox">
+			<a href="javascript:void(0);">综合</a>
+			<a href="javascript:void(0);">销量</a>
+			<a href="javascript:void(0);">最新</a>
+			<a id="jiage" href="javascript:void(0);">价格</a>
+				
+			<input type="number" placeholder="¥">
+			<span>-</span>
+			<input type="number" placeholder="¥">
+		</div>
+
+		<div class="liebox">
+
+			<!-- <a class="dbox" href="product_muban.html" target="_blank">
+				<div class="dcover"></div>			
+				<dl>
+					<dt>
+						<img src="../images/liebiao/01.png" alt="">
+					</dt>
+					<dd>
+						<i class="bianhao">001</i>
+						<b class="bb" class="name">经典永续 朱砂</b>
+						<p>鲜花玫瑰 80cm长形</p>
+						<b>￥<span class="price">2888.0</span></b>
+					</dd>
+					
+				</dl>
+			</a> -->
+
+		</div>
+		
+		<div class="liebox"></div>
+		<div class="liebox"></div>
+		<div class="liebox"></div>
+		
+	</div>
+
+	
+<!-- 模板 --> 
+	<script  id="liebiao_template" type="text/html">
+	<% for(var i=0,len= liebiaos.length; i< len; i++){ 
+		var prod= liebiaos[i];
+	%>
+		
+		<a class="dbox" href="product_muban.html" target="_blank">
+				<div class="dcover"></div>		
+				<dl>
+					<dt>
+						<img src="../images/liebiao/<%= prod.url %>" alt="">
+					</dt>
+					<dd>
+						<i class="bianhao"><%= prod.id %></i>
+						<b class="bb name"><%= prod.name %></b>
+						<p><%= prod.dis %></p>
+						<b>￥<span class="price"><%= prod.price %></span></b>
+					</dd>
+					
+				</dl>
+			</a>
+	<% } %>
+
+	</script>
+<!-- 模板结束 -->
+
+<!-- 1240的底部 -->
+	<div id="baoyou">
+		<img src="../images/product/baoyou.PNG" alt="">
+
+	</div>
+
+
+<!-- 引入尾部 -->
+<div id="weibu"></div>
+
+<script src="../lib/jquery/jquery.js"></script>
+
+<script src="../lib/jquery_plugins/jquery.cookie.js"></script>
+<script src="../lib/artTemplate/template-native.js"></script>
+<script src="../js/liebiao.js"></script>
+
+<script>
+// [{id, name, price}, {}, {}]
+$(function(){
+
+
+	/*$("#daliebox").on("click",".dbox",function(){
+
+	/*var _id= $(this).find(".bianhao").text();
+			$.cookie.json = true; 
+			// console.log(_id);
+			$.cookie("number",_id,{expires:9,path:"/"});*/
+			// console.log($.cookie("number"));
+				
+		
+
+		// 获取当前点击的 “添加到购物车” 所在行对象
+		// var $row = $(this).parent().parent();
+				
+		// 获取当前点击的 “添加到购物车” 行中商品信息，保存到对象中
+		/* console.log(this);
+
+		var product = {
+			url: $(this).find("img").attr("src"),
+			id : $(this).find(".bianhao").text(),
+			name :$(this).find(".name").text(),
+			price : $(this).find(".price").text(),
+			amount:1
+		};
+				
+		$.cookie.json = true; 
+
+		// 获取 cookie 中保存的购物车信息
+		var _products = $.cookie("products") || [];
+				// 判断是否已选购当前商品
+			
+		var _index = indexOf(product.id, _products);
+		
+		$.cookie("products",product,{expires:9});
+
+		console.log($.cookie("products"));
+			
+		
+		});*/
+		
+
+	});
+
+
+</script>
+
+
+
+
+</body>
+</html>

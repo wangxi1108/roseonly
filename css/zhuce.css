@@ -1,0 +1,62 @@
+
+
+html, body,li,a,img,p,h2,h3,span,input{margin: 0;padding: 0;}
+
+a{text-decoration: none;}
+li{list-style: none;}
+img{border: 0;}
+
+
+
+#loginbox{width: 100%;height: 673px;
+	background: url(../images/login/beijing.jpg) no-repeat
+	 center center;background-size:;}
+
+#loginbox .login{width:1240px;height:100%;margin:0 auto;}
+#loginbox .login .zuoa{display:inline-block;width: 810px;
+	height: 600px;float: left;}
+
+#loginbox .login .denglu{width: 395px;height:513px;
+	float: left;background: #fafafa;}
+#loginbox .denglu .xinxi{width:305px;height:426px;padding:
+	30px 50px 0 50px;}
+
+#loginbox .xinxi .country,.xinxi .callbox,.xinxi .password,
+.xinxi .yanzheng,.xinxi .yzmbox
+{width: 288px;height: 44px;margin-top: 16px;text-align: center;} 
+/* 国家 */
+#loginbox .xinxi .country{outline:none;cursor: default;}
+
+/*电话*/
+.xinxi .callbox{border: 1px solid #a4a4a4;background:#fff;}
+.xinxi .callbox p{float: left;font-size: 14px;
+	line-height: 44px;width: 44px;height: 44px;
+	text-align: center;border-right:1px solid #a4a4a4; }
+.xinxi .callbox .tishi1,.xinxi .tishi2,.xinxi .tishi3{
+	display:inline-block;color: red;font-size: 10px;}
+.xinxi .tishi2{height:16px;display:block;line-height:16px;}
+.xinxi .callbox .call{height: 42px;border: none;
+	width:230px;outline: none;}
+/*验证码*/
+#loginbox .xinxi .yzmbox input{width: 191px;height: 42px;float: left;}
+.xinxi .yzmbox b{display:block;width: 96px;height: 46px;
+	background: #d2d2d2;font-size:normal;float: left;}
+.xinxi .yzmbox{width: 340px;}
+.xinxi .yzmbox i{font-style: normal;font-size: 12px;
+	line-height: 44px;}
+.xinxi .yzmbox .fa{display:block;width: 96px;height: 46px;
+	background: #d2d2d2;font-size:normal;float: left;
+	line-height: 46px;font-weight: normal;font-size: 12px; }
+
+
+/* 创建 */
+#loginbox .xinxi .chuang{line-height:20px;
+	text-align: right;font-size: 12px;width:288px;}
+
+/*登录*/
+#loginbox .xinxi .yanzheng{display:inline-block;
+	color: #fff;font-size: 16px;background: #c6c6c6;
+text-align: center;line-height: 46px;height: 46px;}
+
+
+#baoyou{width: 1243px;height: 157px;margin: 0 auto;}

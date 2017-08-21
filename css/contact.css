@@ -1,0 +1,22 @@
+
+
+html, body,li,a,img,ul,li,p{margin: 0;padding: 0;}
+
+a{text-decoration: none;}
+li{list-style: none;}
+img{border:0;}
+   
+
+#fuchuang{width: 47px;height: 160px;position:fixed;right: 0;
+	bottom: 50px;z-index:90;}
+#fuchuang .chuang1,.chuang2,.dingbu{width: 47px;height: 47px;
+ 	margin-top:6px;}
+.chuang1,.chuang2{position:relative;}
+.chuang1 .img11{position: absolute;right: 47px;top:-50px;
+	display: none;z-index: 91;}
+
+.chuang2 .img22{position: absolute;right: 47px;top:-30px;
+	display: none;z-index: 91;}
+
+#fuchuang .dingbu{display: none;}
+

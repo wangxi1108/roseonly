@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单</title>
+	<link rel="stylesheet" href="../css/dingdan.css">
+</head>
+<body>
+	<div id="header">
+		<a class="logo" href="../index.html"><img src="../../images/logo1.png" alt=""></a>
+		<div class="user">
+			<a href="#">登录<span>|</span></a>
+			<a href="#">注册<span>|</span></a>
+			<a href="#"><img src="" alt="">图</a>
+			<span>(0)</span>
+
+		</div>
+	</div> 
+
+	<!-- 订单内容 -->
+	<div id="contentbox">
+		<h1>填写核对订单信息</h1>
+		<h2>收货人信息</h2>
+		<div class="address">
+			<div class="new">
+				<span class="newaddress">点击添加新地址</span>
+
+			</div>
+			<div><span>收货人：</span><input type="text"></div>
+			<div><span>手机号码：</span><input type="text"></div>
+			<div class="dizhi"><span>省份:</span>
+				<select id="province"></select>
+				<select id="city"></select>
+				<select id="district"></select>
+			</div>
+			<div><span>地址：</span><input type="text"></div>
+			<div class="dyou"><span>邮编：</span><input type="text"><span class="ds2">
+				请使用准确邮编，方便您收货</span>
+			</div>
+			<div class="aa"><a class="quxiao" href="#">取消</a>
+			<a class="save" href="#">保存</a></div>
+
+		</div>
+
+		<h2>配送及支付方式</h2>
+		<div class="paymethod">
+			<p>支付方式：在线支付</p>
+			<div class="method">
+				<span>配送方式：</span>
+				<div class="xuanze">
+					<label for=""><input type="radio" name="song"> 快递运输</label><br>
+					<label for=""><input type="radio" name="song">实体店自提</label>
+					
+				</div>
+			</div>
+		</div>
+		<h2>商品清单</h2>
+<!-- 商品订单消息 -->
+		<div class="message">
+			<!-- <div class="cart">
+					<div class="mingcheng">
+						<img src="../images/product/14950752766256400.png" alt="">
+						<span class="name">恒久真爱-恒久line-朱砂-19支-40cm长形</span>
+					</div>
+				
+					<div class="danjia">￥<span class="price">1999.0</span></div>
+					<div class="amount">1</div>
+			</div> -->
+
+	<!-- cart模板 -->
+	<script  id="dingdan_template" type="text/html">
+	<% for(var i=0,len= dingdans.length; i< len; i++){ 
+		var prod= dingdans[i];
+	%>
+		<div class="cart">
+					<div class="mingcheng">
+						<img src="<%= prod.url %>" alt="">
+						<span class="name"><%= prod.name %></span>
+					</div>
+				
+					<div class="danjia">￥<span class="price"><%= prod.price %></span></div>
+					<div class="amount"><%= prod.amount %></div>
+		</div>
+
+	<% } %>
+	
+	</script>
+
+		</div> 
+<!-- 未完成 -->
+
+		<!-- <h2 class="hyou">使用优惠券</h2> -->
+		<p class="hyou">使用优惠券</p>
+
+		<div class="youhui">
+			<label for="">优惠券号码：<input type="text"></label>
+			<span>使用</span>
+		</div>
+		<div class="zong">总计： ￥<span class="all">0.0</span></div>
+
+		
+	</div>
+
+
+	<div id="baoyou">
+		<img src="../images/login/baoyou.PNG" alt="">
+	</div>
+<!-- 引入底部 -->
+	<div id="dingdi"></div>
+
+
+
+
+<script src="../lib/jquery/jquery.js"></script>
+<script src="../lib/artTemplate/template-native.js"></script>
+<script src="../lib/jquery_plugins/jquery.cookie.js"></script>
+<script src="../js/dingdan.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body> 
+	<!-- 引入头部 -->
+	<div id="top"></div>
+	<!-- 引入浮窗 -->
+	<div id="chuang"></div>
+
+<div id="content">
+    
+	<div id="lunbo">  
+		<ul class="ull">
+			<li><a href="#"><img src="images/index/14958528202235021.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/index/14967210343812255.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/index/14951785300358822.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/index/14924247092201015.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/index/14827387649069519.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/index/14684642372219486.jpg" alt=""></a></li>
+		</ul>
+	
+		<div class="circle"></div>
+		<div class="pageS"><</div>
+		<div class="pageX">></div>
+
+	</div>
+	<!-- 方图导航 -->
+
+	<div id="tubox">
+		<!-- <dl>
+			<dt><a href="#"><img src="images/index/14967168725483842.jpg" alt=""></a></dt>
+			<dd>新品上新</dd>
+		</dl> -->
+		<div class="t1 t01">
+			<a href="#"><img src="images/index/14967168725483842.jpg" alt="">
+			</a>
+			<p>新品上新</p>
+		</div>
+		<div class="t1">
+			<a href="#"><img src="images/index/14924835298079034.jpg" alt="">
+			</a>
+			<p>新品上新</p>
+		</div>
+		<div class="t1">
+			<a href="#"><img src="images/index/14967168725483842.jpg" alt="">
+			</a>
+			<p>新品上新</p>
+		</div>
+		<div class="t1">
+			<a href="#"><img src="images/index/14897455944895387.jpg" alt="">
+			</a>
+			<p>明星同款</p>
+		</div>
+	</div>
+	
+<!-- 热卖单品 -->
+	<div id="rebox">
+		<p>热卖单品推荐</p>
+	</div>
+
+	<div id="hotbox">
+		<div class="liS">
+			<li><a href="#">鲜花玫瑰</a></li>
+			<li><a href="#">永生玫瑰</a></li>
+			<li><a href="#">玫瑰珠宝</a></li>
+			<li><a href="#">玫瑰饰品</a></li>
+		</div>
+
+		<ul class="liX">
+			<li> 
+				<!-- <a class="div0" href="#">
+						<div class="dcover"></div>	
+						<dl>
+							<dt><img src="images/index/14798036334683554.png" alt=""></dt>
+							<dd>
+							<b class="id" style="display: none;"></b>
+								<h2>经典永续 朱砂</h2>
+								<p>鲜花玫瑰 80cm长形</p>
+								<h3>￥1999.0</h3>
+							</dd>
+						</dl>
+				</a> -->
+
+			</li>
+
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+	</div>
+
+<!-- 热品模板 --> 
+	<script id="repin_template" type="text/html">
+
+	<% for(var i=0,len= repins.length; i< len; i++){ 
+		var prod= repins[i];
+	%>
+		
+	<a class="div0" href="html/product_muban.html" target="_blank">
+		
+			<div class="dcover"></div>
+			<dl>
+				<dt>
+					<!-- <img src="images/index/<%= prod.url %>" alt=""> -->
+					<img src="<%= prod.url %>" alt="">
+				</dt>
+				<dd>
+					<b class="hao" style="display: none;"><%= prod.id %></b>
+					<b class="pingpai" style="display: none;"><%= prod.pingpai %></b>
+					<h2><%= prod.name %></h2>
+					<p><%= prod.dis %></p>
+					<h3><%= prod.price %></h3>
+				</dd>
+			</dl>
+		</a>
+
+	<% } %>
+
+	</script>
+<!-- 模板结束 -->
+
+
+
+	
+<!-- 楼层导航 4个lou,放在loubox里面。 -->
+	<div id="loubox">
+		<!-- <div class="lou">
+			<div class="loutop">
+				<h3>鲜花玫瑰<span>|</span>
+					Fresh Cut Rose
+				</h3>
+				<a href="#">More</a>
+		
+			</div>
+		
+			<dl class="louxia">
+				<dt><a href="#"><img src="images/index/14822310357339906.jpg" alt=""></a>
+				遮罩
+					<div class="cover"></div>
+		
+				</dt> 
+		
+				<dd><a href="#"><img src="images/index/14906677552009084.jpg" alt=""></a>
+					<div class="cover"></div>
+				</dd>
+				<dd>
+					<a href="#"><img src="images/index/14906677552009084.jpg" alt=""></a>
+					<div class="cover"></div>
+				</dd>
+				<dd class="dd3"><a href="#"><img src="images/index/14906677552009084.jpg" alt=""></a>
+					<div class="cover"></div>
+				</dd>
+				<dd class="dd3"><a href="#"><img src="images/index/14906677552009084.jpg" alt=""></a>
+					<div class="cover"></div>
+				</dd>
+		
+			</dl>
+		</div>
+		 -->
+	</div>
+
+	<!-- lou模板 -->
+<script id="lou_template" type="text/html">
+
+	<% for(var i=0,len= lous.length; i< len; i++){ 
+		var prod= lous[i];
+	%>
+	<div class="lou">
+			<div class="loutop">
+				<h3><%= prod.name %><span>|</span>
+					Fresh Cut Rose
+				</h3>
+				<a href="#">More</a>
+
+			</div>
+
+			<dl class="louxia">
+				<dt><a href="#"><img src="images/index/
+				<%= prod.daimg %>" alt=""></a>
+				<!-- 遮罩 -->
+					<div class="cover"></div>
+
+				</dt> 
+
+				<dd><a href="#"><img src="images/index/
+				<%= prod.img01%>" alt=""></a>
+					<div class="cover"></div>
+				</dd>
+				<dd><a href="#"><img src="images/index/<%= prod.img02%>" alt=""></a>
+					<div class="cover"></div>
+				</dd>
+				<dd class="dd3"><a href="#"><img src="images/index/<%= prod.img03%>" alt=""></a>
+					<div class="cover"></div>
+				</dd>
+				<dd class="dd3"><a href="#"><img src="images/index/<%= prod.img04%>" alt=""></a>
+					<div class="cover"></div>
+
+				</dd>
+
+			</dl>
+		</div>
+
+	<% } %>
+
+	</script>
+
+
+
+
+
+	
+	<div id="conLast">
+		<div class="lastS">
+			<a href="#"><img src="images/index/14822888006063637.jpg" alt=""></a>
+
+			<a class="la" href="#"><img src="images/index/14822888006063637.jpg" alt=""></a>
+
+		</div>
+
+		<div class="lastX">
+			<dl class="dll0">
+				<dt><img src="images/index/icon.PNG" alt=""></dt>
+				<dd>全场包邮sdaddsad
+					<span>特殊商品除外</span>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt><img src="images/index/icon.PNG" alt=""></dt>
+				<dd>全场包邮sdad
+					<span>特殊商品除外</span>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt><img src="images/index/icon.PNG" alt=""></dt>
+				<dd>全场包邮
+					<span>特殊商品除外</span>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt><img src="images/index/icon.PNG" alt=""></dt>
+				<dd>保养无语
+					<span>悉心照顾，天天浇水</span>
+				</dd>
+			</dl>
+
+		</div>
+
+	</div>
+
+</div>
+<div>
+
+</div>
+
+<!-- 引入尾部 -->
+<div id="weibu"></div>
+
+
+<script src="lib/jquery/jquery.js"></script>
+
+<script src="lib/jquery_plugins/jquery.cookie.js"></script>
+
+<script src="lib/artTemplate/template-native.js"></script>
+
+<script src="js/lunbo.js"></script>
+
+<script src="js/index.js"></script>
+
+
+
+
+
+</body>
+</html>

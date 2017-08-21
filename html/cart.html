@@ -1,0 +1,140 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cart</title>
+	<link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+	
+	<div id="header">
+		<a class="logo" href="../index.html"><img src="../../images/logo1.png" alt=""></a>
+		<div class="user">
+			<a href="#">登录<span>|</span></a>
+			<a href="#">注册<span>|</span></a>
+			<a href="#"><img src="" alt="">图</a>
+			<span>(0)</span>
+ 
+		</div>
+	</div> 
+	<!-- 内容 -->
+	<div id="contentbox">
+		<div class="content">
+			<div class="con1">
+				<h2>我的购物车</h2>
+				<span>清除购物车</span>
+			</div>
+			<!-- 商品展示 -->
+			<div class="cartbox">
+				<div class="title">
+					<div>序号</div>
+					<div>品牌</div>
+					<div class="mingcheng">商品名称</div>
+					<div>单价</div>
+					<div>数量</div>
+					<div>操作</div>
+				</div>
+ 
+		<!-- cart信息 -->
+			 	
+			<!-- <div class="cart">
+					<div class="bianhao">200</div>
+					<div class="pingpai">roseonly</div>
+					<div class="mingcheng">
+						<img src="../images/product/14950752766256400.png" alt="">
+						<span class="name">恒久真爱-恒久line-朱砂-19支-40cm长形</span>
+					</div>
+				
+					<div class="danjia">￥<span class="price">1999.0</span></div>
+			
+					<div class="shuliang">
+						<span class="jian"></span>
+						<input type="text" class="amount" 
+						value="1">
+						<span class="add"></span>
+					</div>
+					<div class="xiaoji" style="display:none;"></div>
+					<div class="delete"><a class="shanchu" href="javascript:void(0);">删除</a>
+					</div>
+					
+				</div> -->
+
+		   </div>
+				
+			
+<!-- cart模板 -->
+	<script  id="cart_template" type="text/html">
+	<% for(var i=0,len= carts.length; i< len; i++){ 
+		var prod= carts[i];
+	%>
+			<div class="cart">
+				<div class="bianhao"><%= prod.id %></div>
+					<div class="pingpai"><%= prod.pingpai %></div>
+					<div class="mingcheng">
+						<img src="<%= prod.url %>" alt="">
+						<span class="name"><%= prod.name %></span>
+					</div>
+	
+					<div class="danjia">￥<span class="price"><%= prod.price %></span>
+					</div>
+				
+					<div class="shuliang">
+						<span class="jian"></span>
+						<input type="text" class="amount" 
+						value="<%= prod.amount %>">
+						<span class="add"></span>
+					</div>
+
+					<div class="xiaoji" style="display:none;">
+						<%= prod.amount * prod.price %>
+					</div>
+
+					<div class="delete"><a class="shanchu" href="javascript:void(0);">删除</a></div>
+				
+			</div>
+	<% } %>
+	
+	</script>
+<!-- 模板结束 -->	
+
+		</div>
+
+
+		<!-- 合计 -->
+			<div class="totalbox">
+				<span>合计：</span>
+				<span>￥</span>
+				<span class="total">0.0</span>
+				<a class="jiesuan" href="../html/dingdan.html">去结算</a>
+			</div>
+		<!-- 帮助 -->
+			<div class="help">
+				<h2>订单帮助</h2>
+				<p>热线电话：400-1314-520</p>
+				<p>客服邮箱：<a href="#">service@roseonly.com</a>  客服工作时间：周一至周日9:00-21:00</p>
+				<p>如果您在下单过程中遇到问题，请与我们联系。因为鲜花商品对配送时效有特殊要求，订购后请随时登录查询物流状态。</p>
+			</div>
+
+	</div>
+
+
+
+
+	<div id="baoyou">
+		<img src="../images/login/baoyou.PNG" alt="">
+	</div>
+<!-- 引入底部 -->
+	<div id="cdibu"></div>
+
+
+
+<script src="../lib/jquery/jquery.js"></script>
+
+<script src="../lib/jquery_plugins/jquery.cookie.js"></script>
+<script src="../lib/artTemplate/template-native.js"></script>
+<script src="../js/cart.js"></script>
+
+
+</body>
+</html>

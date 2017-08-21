@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>具体商品详情</title>
+	<link rel="stylesheet" href="../css/damuban.css">
+	<link rel="stylesheet" href="../css/footer.css">
+</head>
+<body> 
+ 
+	<!-- 引入头部 -->
+	<div id="top"></div> 
+
+
+	<div id="pinbox">
+	   	<!-- <div id="fang_muban"> -->
+		<!-- 整页模板 -->
+		<div id="jing">
+
+			<div class="jleft">
+		<!-- 放大镜 -->
+				<!-- <img class="zoom" src="../images/product/<%= da.url %>" data-zoom-image="../images/product/fangda.png"> -->
+ 				<img class="zoom" src="../images/product/14950752766256400.png" data-zoom-image="../images/product/fangda.png">
+
+				<div class="xiaotu">
+					<div class="LL"><</div>
+					<a href="#"><img src="../images/product/14878430870629684.png" alt=""></a>
+					<a href="#"><img src="../images/product/05.png" alt=""></a>
+					<a href="#"><img src="../images/product/14950752766256400.png" alt=""></a>
+					<a href="#"><img src="../images/product/14878430870629684.png" alt=""></a>
+					<div class="RR">></div>
+				</div>
+			</div>
+
+
+			<div class="jright">
+		
+				<div class="rightmuban">
+
+				<script  id="damuban_template" type="text/html">
+			<% for(var i=0,len= damubans.length; i< len; i++){ 
+				var da= damubans[i];
+			%>
+				
+				<p>
+					<b class="name"><%= da.name %></b>
+					<span>·本款鲜花玫瑰，仅接受专卖店自提。您可以线上下单，直接前往指定专卖店提取。有任何疑问，请随时联系我们的客服，客服电话4001314520。<br>
+					<i class="bianhao"><%= da.id %></i></span>
+				</p>
+		<!-- 后期添加 -->
+				<b class="pingpai" style="display: none;"><%= da.pingpai %></b>
+
+				<!-- <img class="imgurl" style="display: none;" src="../images/product/<%= da.url %>" alt=""> -->
+				<img class="imgurl" style="display: none;" src="<%= da.url %>" alt="">
+			
+				<div class="jprice">价格:<b>￥</b>
+					<span class="jiaqian"><%= da.price %></span>
+				</div>
+
+	
+				<div class="yanse"><span>颜色:</span>
+
+					<img src="../images/product/14950752766256400_2.png" alt="">
+					<img src="../images/product/14950752800291946_2.png" alt="">
+					<img src="../images/product/14950752778964695_2.png" alt="">
+				</div>
+
+			<!-- 数量 -->
+				<div class="jamount">
+					<span>数量：</span>
+					<div>
+						<input class="shu" type="text" value="1">
+						<p><span class="add">+</span>
+						<span class="jian">-</span></p>
+					</div>
+				</div>
+			
+
+			<!-- 购买 -->
+				<div class="mai">
+					<a class="jmai" href="#">立即购买</a>
+					<a class="jche" href="../html/cart.html">加入购物车</a>
+					<!-- <a class="jche" href="#">加入购物车</a> -->
+				</div>
+
+				<p class="jp">服务承诺：官方正品   免邮配送   同城速递</p>
+
+
+				<% } %>
+	
+				</script>
+				</div>
+
+			</div>
+	
+
+</div>
+
+
+	<!--  图-->
+			<!-- 可用模板，没改。 -->
+		<div >
+			<img src="../images/product/xq_08.png" alt="">
+		</div>
+		<div class="floor">
+			<img src="../images/product/14958523312037527.jpg" alt="">
+		</div>
+		<div>
+			<img src="../images/product/14950752763278225.jpg" alt="">
+		</div>
+		<div class="floor">
+			<img src="../images/product/14950752763732707.jpg" alt="">
+		</div>
+		<div>
+			<img src="../images/product/14950752764199289.jpg" alt="">
+		</div>
+		<div class="floor">
+			<img src="../images/product/14950752764652632.jpg" alt="">
+		</div>
+		<div class="floor">
+			<img src="../images/product/14950752765183645.jpg" alt="">
+		</div>
+		<div>
+			<img src="../images/product/14950752765702004.jpg" alt="">
+		</div>
+		<div class="floor">
+			<img src="../images/product/14958523312604144.jpg" alt="">
+		</div>
+		<div class="floor">
+			<img src="../images/product/14823775491713298.jpg" alt="">
+		</div>
+
+<!-- 楼层导航 -->
+	<ul id="menu">
+		<li>设计</li>
+		<li>参数</li>
+		<li>灵感</li>
+		<li>寓意</li>
+		<li>提示</li>
+		<li>热卖</li>
+		<li>TOP</li>
+	</ul>
+ 
+
+	<!-- 轮播推荐 -->
+		<div id="tuibox">
+			<div class="zi">
+				<h3>热卖推荐</h3>
+				<div class="page">
+					
+						<li class="page1">1</li>
+						<li class="page2">2</li>
+
+				</div>
+			</div>
+
+			<div class="retu">
+				
+			 <li>
+				<!-- <a  class="retu0" href="../html/product.html" target="_blank">
+					<dl>
+						<dt><img src="../images/product/14866960305626911.png" alt=""></dt>
+							<dd>
+								<h2>经典永续 朱砂</h2>
+								<p>鲜花玫瑰 80cm长形 tinmei</p>
+								<h3>￥1999.0</h3>
+							</dd>
+						</dl>
+				</a>
+
+				 -->
+
+			  </li>
+			  <li></li>
+
+			</div>
+		</div>
+
+
+
+
+<!-- 模板 -->
+	<script  id="product_template" type="text/html">
+	<% for(var i=0,len= products.length; i< len; i++){ 
+		var prod= products[i];
+	%>
+		<a  class="retu0" href="../html/product.html" target="_blank">
+				<dl>
+					<dt><img src="../images/product/<%= prod.url %>" alt="">
+					</dt>
+					<dd>
+						<h2><%= prod.name %></h2>
+						<p><%= prod.dis %></p>
+						<h3><%= prod.price %></h3>
+					</dd>
+				</dl>
+		</a>
+	<% } %>
+
+	</script>
+<!-- 模板结束 -->		
+	</div>
+
+
+
+<!-- 1240的底部 -->
+	<div id="baoyou">
+		<img src="../images/product/baoyou.PNG" alt="">
+
+	</div>
+
+
+<!-- 引用footer -->
+	<div id="pdibu"></div>
+
+
+
+<script type="text/javascript" src="../lib/jquery/jquery.js"></script>
+<script src="../lib/jquery_plugins/jquery.elevateZoom-2.2.3.min.js"></script>
+<script src="../js/fangdajing.js"></script>
+<script src="../lib/jquery_plugins/jquery.cookie.js"></script>
+<script src="../lib/artTemplate/template-native.js"></script>
+<script src="../js/product_muban.js"></script>
+
+<script>
+$(function(){
+	/*$.cookie.json= true;
+	var _number= $.cookie("number");
+
+
+	$.getJSON("../data/product_muban.json",
+		 function(responseData){
+
+		 	for(var i=0,len=responseData.length;i<len;i++){
+
+		 		if(_number== responseData[i].id){
+		 			var data= {
+		 				damubans:[ responseData[i] ]
+		 			}
+		 		}
+
+		 	}
+
+		 	var html = template("damuban_template",data);
+			$(".rightmuban").append(html);
+	});
+*/
+		 	
+	
+	/*//data请求成功了的
+		$.getJSON("../data/product_muban.json", 
+		function(responseData){
+				var data = {
+					damubans : responseData
+				};
+				var html = template("damuban_template",data);
+				$(".rightmuban").append(html);
+			});		
+*/
+
+/*添加到购物车*/
+
+	/*// 获取当前点击的 “添加到购物车” 所在行对象
+	$(".jright").on("click",".jche",function(){
+		// 获取当前点击的 “添加到购物车” 行中商品信息，保存到对象中
+		 console.log(this);
+
+		var product = {
+			url: $(this).find("img").attr("src"),
+			id : $(this).find(".bianhao").text(),
+			name :$(this).find(".name").text(),
+			price : $(this).find(".price").text(),
+			amount:1
+		};
+				
+		$.cookie.json = true; 
+
+
+
+	});
+*/
+
+});
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

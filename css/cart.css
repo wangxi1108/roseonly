@@ -1,0 +1,103 @@
+
+
+html, body,li,a,img,ul,li,p,h2{margin: 0;padding: 0;}
+
+a{text-decoration: none;}
+li{list-style: none;}
+img{border: 0;}
+ 
+ 
+
+  /*头部  */
+#header{width: 1240px;height: 80px;
+	margin: 0 auto;overflow: hidden;}
+#header .logo{display: block;width: 197px;
+	height: 42px;margin: 0 auto;margin-top: 16px;}
+
+#header .user{width:94px;height: 20px;float:right;
+		text-align: center;line-height: 20px;}
+#header .user a{color: #000;font-size: 12px;display: 
+	;float: left;}
+#header .user span{color: #000;font-size: 12px;
+	line-height: 20px;}
+
+
+#header .userer{width:94px;
+	position: fixed;top: 10px;height:20px;
+    z-index:66;left:1008px;
+	text-align: center;line-height: 20px;}
+#header .userer span{color: #fff;}
+#header .userer a {color:#fff;}
+
+/*contentbox*/
+#contentbox{width: 1240px;min-height:400px;margin: 0 auto;border-top: 
+	6px solid #000;border-bottom: 2px solid #83847e;padding: 
+	40px 0;}
+#contentbox .content{width: 960px;min-height: 250px;
+	margin: 0 auto;}
+
+.content .con1{width: 100%;height: 34px;
+	line-height: 34px;}
+.content .con1 h2{float: left;font-size:24px;}
+.content .con1 span{display: block;float:right;font-size: 
+	14px;}
+.content .cartbox{width:100%;border-top: 1px solid #444;
+	border-bottom:1px solid #444;}
+.content .cartbox .title{height: 30px;border-bottom:1px 
+	solid #000;}	
+.content .cartbox .title div{float: left;line-height:30px;
+	padding: 0 40px;}
+.content .cartbox .title .mingcheng{padding: 0 167px;}
+
+/* 购物车 */
+
+.content .cartbox .cart{height: 120px;width: 960px;}
+
+.content .cartbox .cart div{height: 120px;float:left;
+	text-align: center;line-height: 120px;font-size: 14px;}
+.content .cartbox .cart a,.content .cartbox .cart input,
+.content .cartbox .cart span{font-size: 14px;}
+
+
+.content .cartbox .cart .bianhao{width: 100px;}
+.content .cartbox .cart .pingpai{width: 130px;}
+.content .cartbox .cart .mingcheng{width: 400px;}
+.content .cartbox .cart .mingcheng img{width: 100px;
+	height: 100px;float: left;}
+.content .cartbox .cart .mingcheng .name{text-align: left;}
+
+.content .cartbox .cart .danjia{width: 100px;}
+
+.content .cartbox .cart .shuliang{width: 126px;}
+.content .cartbox .cart .amount{width:66px;outline: none;
+}
+.content .cartbox .cart .shuliang span{display: inline-block;
+	}
+.content .cartbox .cart .shuliang .jian{background:
+ url(../images/product/jian.PNG) no-repeat 0 0;
+ width: 19px;height: 16px;}
+.content .cartbox .cart .shuliang .add{background:
+ url(../images/product/add.PNG) no-repeat 0 0;
+ width: 17px;height: 15px;}
+
+.content .cartbox .cart .delete{width: 90px;}
+.content .cartbox .cart .delete a{color: #000;}
+
+
+
+
+/*合计，结算*/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+#contentbox .totalbox{height: 40px;line-height:40px;
+	margin-top: 20px;margin-bottom: 2px;text-align: right;
+	width: 960px;margin: 0 auto;}
+#contentbox .totalbox span{font-size: 20px;}
+#contentbox .totalbox a{display: inline-block;
+	width: 110px;height: 40px;background: #c71f2c;
+	text-align: center;color: #fff;}
+
+#contentbox .help{width: 960px;height: 200px;margin:0 auto;}
+#contentbox .help h2{font-size: 20px;}
+#contentbox .help p{font-size: 12px;margin-top:15px;}
+
+
+#baoyou{width: 1243px;height: 157px;margin: 0 auto;}
